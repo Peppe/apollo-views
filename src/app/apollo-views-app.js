@@ -1,10 +1,23 @@
-import { LitElement, html } from 'lit-element';
-import '../views/todo/todo-view'
+import {
+  LitElement,
+  html
+} from 'lit-element';
+import '../views/todo/todo-view';
 
-class ApolloViewsApp extends LitElement { 
+class ApolloViewsApp extends LitElement {
   render() {
-    return html` 
-      <p>My app</p>
+    return html `
+      <style>
+        :host {
+          display: flex;
+          flex-direction: row;
+        }
+
+        div {
+          color: red;
+        } 
+      </style>
+      <div>hello</div>
       <todo-view></todo-view>
     `;
   }
