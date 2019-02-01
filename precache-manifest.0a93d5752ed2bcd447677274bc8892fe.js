@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "img/icons/icon-144x144.png"
   },
   {
-    "revision": "46d7cb5bd7c44fc464f4",
-    "url": "main.css"
+    "revision": "149b0d29fbb618e8d4416f6b95fd8bf6",
+    "url": "vendor/bundles/webcomponents-sd-ce-pf.js"
   },
   {
     "revision": "0d645bdc85e359cedb84c1ae7fe2f74f",
@@ -20,14 +20,6 @@ self.__precacheManifest = [
     "url": "vendor/webcomponents-loader.js"
   },
   {
-    "revision": "16a6e231db0f767f82644d8cfa072ba0",
-    "url": "vendor/bundles/webcomponents-ce.js"
-  },
-  {
-    "revision": "149b0d29fbb618e8d4416f6b95fd8bf6",
-    "url": "vendor/bundles/webcomponents-sd-ce-pf.js"
-  },
-  {
     "revision": "a9abd5531d9abb2652cb9f1a1c3322da",
     "url": "vendor/bundles/webcomponents-sd-ce.js"
   },
@@ -36,16 +28,20 @@ self.__precacheManifest = [
     "url": "vendor/bundles/webcomponents-sd.js"
   },
   {
-    "revision": "46d7cb5bd7c44fc464f4",
-    "url": "main.46d7cb5b.js"
+    "revision": "16a6e231db0f767f82644d8cfa072ba0",
+    "url": "vendor/bundles/webcomponents-ce.js"
   },
   {
-    "revision": "695302310558140e00fa1146a129711d",
+    "revision": "dcb7f84c87be224f28e4",
+    "url": "main.dcb7f84c.js"
+  },
+  {
+    "revision": "dcb7f84c87be224f28e4",
+    "url": "main.css"
+  },
+  {
+    "revision": "eeea0ea27a47d9356dc173075d3b6c36",
     "url": "index.html"
-  },
-  {
-    "revision": "9d88711c7ce6600a2359341f39dc720d",
-    "url": "img/icons/icon.pxm"
   },
   {
     "revision": "f626a25858c6bc639e53577fab66c41d",
