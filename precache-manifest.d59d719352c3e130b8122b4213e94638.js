@@ -32,15 +32,15 @@ self.__precacheManifest = [
     "url": "vendor/bundles/webcomponents-ce.js"
   },
   {
-    "revision": "de258787d13d03e90093",
-    "url": "main.de258787.js"
-  },
-  {
-    "revision": "de258787d13d03e90093",
+    "revision": "510092734c84b3545cbf",
     "url": "main.css"
   },
   {
-    "revision": "a30ef3421057c0e2d212e3e626d7a28a",
+    "revision": "510092734c84b3545cbf",
+    "url": "main.51009273.js"
+  },
+  {
+    "revision": "62ca387075c9412ba159ac97b501308e",
     "url": "index.html"
   },
   {
