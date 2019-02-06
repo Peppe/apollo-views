@@ -1,26 +1,25 @@
 import {
-  LitElement,
   html
 } from 'lit-element';
 import '../views/todo/todo-view';
+import {
+  BaseView
+} from '../components/base-view.js';
+import '@vaadin/vaadin-button';
+import '@polymer/iron-icon/iron-icon.js';
+import '@vaadin/vaadin-icons/vaadin-icons.js';
+import '../components/apollo-menu.js';
 
-class ApolloViewsApp extends LitElement {
+class ApolloViewsApp extends BaseView {
+
   render() {
     return html `
-      <style>
-        :host {
-          display: flex;
-          flex-direction: row;
-        }
-
-        div {
-          color: red;
-        } 
-      </style>
-      <div>hello</div>
-      <todo-view></todo-view>
+      <div id="main-layout">
+        <apollo-menu views="${this.views}"></apollo-menu>
+        <div id="router-output"></div>
+      </div>
     `;
   }
 }
 
-customElements.define('apollo-views-app', ApolloViewsApp); //
+customElements.define('apollo-views-app', ApolloViewsApp);

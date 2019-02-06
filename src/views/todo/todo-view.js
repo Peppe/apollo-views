@@ -1,5 +1,4 @@
 import {
-  LitElement,
   html
 } from 'lit-element';
 import '@vaadin/vaadin-text-field';
@@ -7,6 +6,9 @@ import '@vaadin/vaadin-button';
 import '@vaadin/vaadin-checkbox';
 import '@vaadin/vaadin-radio-button/vaadin-radio-button';
 import '@vaadin/vaadin-radio-button/vaadin-radio-group';
+import {
+  BaseView
+} from '../../components/base-view';
 
 const VisibilityFilters = {
   SHOW_ALL: 'All',
@@ -14,7 +16,7 @@ const VisibilityFilters = {
   SHOW_COMPLETED: 'Completed'
 };
 
-class TodoView extends LitElement {
+class TodoView extends BaseView {
 
   static get properties() {
     return {
@@ -129,7 +131,8 @@ class TodoView extends LitElement {
 
   updateTodoStatus(updatedTodo, complete) {
     this.todos = this.todos.map(todo =>
-      updatedTodo === todo ? { ...updatedTodo,
+      updatedTodo === todo ? {
+        ...updatedTodo,
         complete
       } : todo
     );
@@ -152,10 +155,6 @@ class TodoView extends LitElement {
       default:
         return todos;
     }
-  }
-
-  createRenderRoot() {
-    return this;
   }
 }
 
