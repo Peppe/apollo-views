@@ -1,35 +1,31 @@
 self.__precacheManifest = [
   {
-    "revision": "3bea1b8dae3eaff04dabc2b11fc15912",
-    "url": "img/icons/favicon.png"
+    "revision": "8dc43708d128f066b708fdf95e26b2a4",
+    "url": "img/icons/icon-144x144.png"
   },
   {
-    "revision": "eb7e5336d30f00109282",
+    "revision": "658143b197de547486d8",
     "url": "main.css"
-  },
-  {
-    "revision": "e3a425ccf3140e58588bcc4544e6d4bf",
-    "url": "vendor/webcomponents-bundle.js"
-  },
-  {
-    "revision": "ab073ba059d1e990f93247eacbc4fba4",
-    "url": "vendor/custom-elements-es5-adapter.js"
-  },
-  {
-    "revision": "e044a63e034bf10304dad73138b8c74b",
-    "url": "vendor/webcomponents-loader.js"
-  },
-  {
-    "revision": "16a6e231db0f767f82644d8cfa072ba0",
-    "url": "vendor/bundles/webcomponents-ce.js"
   },
   {
     "revision": "1ae1c26434bc09177469ba0e47a613df",
     "url": "vendor/bundles/webcomponents-sd-ce-pf.js"
   },
   {
-    "revision": "eb7e5336d30f00109282",
-    "url": "main.eb7e5336.js"
+    "revision": "e044a63e034bf10304dad73138b8c74b",
+    "url": "vendor/webcomponents-loader.js"
+  },
+  {
+    "revision": "ab073ba059d1e990f93247eacbc4fba4",
+    "url": "vendor/custom-elements-es5-adapter.js"
+  },
+  {
+    "revision": "16a6e231db0f767f82644d8cfa072ba0",
+    "url": "vendor/bundles/webcomponents-ce.js"
+  },
+  {
+    "revision": "e3a425ccf3140e58588bcc4544e6d4bf",
+    "url": "vendor/webcomponents-bundle.js"
   },
   {
     "revision": "5ff7c21807e361571a9c3a70bc38a22c",
@@ -40,7 +36,11 @@ self.__precacheManifest = [
     "url": "vendor/bundles/webcomponents-sd.js"
   },
   {
-    "revision": "ddab2a0c8a57e1f535a561bd79d5263e",
+    "revision": "658143b197de547486d8",
+    "url": "main.658143b1.js"
+  },
+  {
+    "revision": "a78dde6e27d51ef6ce52e71dbe07bf50",
     "url": "index.html"
   },
   {
@@ -52,8 +52,8 @@ self.__precacheManifest = [
     "url": "img/icons/icon-192x192.png"
   },
   {
-    "revision": "8dc43708d128f066b708fdf95e26b2a4",
-    "url": "img/icons/icon-144x144.png"
+    "revision": "3bea1b8dae3eaff04dabc2b11fc15912",
+    "url": "img/icons/favicon.png"
   },
   {
     "revision": "9126bf81e806faea1c09b09bf340606f",
