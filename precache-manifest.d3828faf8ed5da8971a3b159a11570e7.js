@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "img/icons/icon-144x144.png"
   },
   {
-    "revision": "658143b197de547486d8",
+    "revision": "784df087d483b2d35d8a",
     "url": "main.css"
   },
   {
@@ -12,20 +12,20 @@ self.__precacheManifest = [
     "url": "vendor/bundles/webcomponents-sd-ce-pf.js"
   },
   {
-    "revision": "e044a63e034bf10304dad73138b8c74b",
-    "url": "vendor/webcomponents-loader.js"
-  },
-  {
     "revision": "ab073ba059d1e990f93247eacbc4fba4",
     "url": "vendor/custom-elements-es5-adapter.js"
   },
   {
-    "revision": "16a6e231db0f767f82644d8cfa072ba0",
-    "url": "vendor/bundles/webcomponents-ce.js"
+    "revision": "e044a63e034bf10304dad73138b8c74b",
+    "url": "vendor/webcomponents-loader.js"
   },
   {
     "revision": "e3a425ccf3140e58588bcc4544e6d4bf",
     "url": "vendor/webcomponents-bundle.js"
+  },
+  {
+    "revision": "16a6e231db0f767f82644d8cfa072ba0",
+    "url": "vendor/bundles/webcomponents-ce.js"
   },
   {
     "revision": "5ff7c21807e361571a9c3a70bc38a22c",
@@ -36,11 +36,11 @@ self.__precacheManifest = [
     "url": "vendor/bundles/webcomponents-sd.js"
   },
   {
-    "revision": "658143b197de547486d8",
-    "url": "main.658143b1.js"
+    "revision": "784df087d483b2d35d8a",
+    "url": "main.784df087.js"
   },
   {
-    "revision": "a78dde6e27d51ef6ce52e71dbe07bf50",
+    "revision": "498468cfd42d15423c58894cab271eb4",
     "url": "index.html"
   },
   {

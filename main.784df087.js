@@ -3066,7 +3066,7 @@ class jn extends(Qh(Lh(bs([sn],Nh)))){static get template(){return ue`
         <div id='product-details'>
           ${this.item?O`
       <h2>${this.item.name}</h2>
-      <img src='${this.item.img}'>
+      <img src='${this.item.image}'>
       <p>${this.item.description}</p>
     `:O``}
         </div>
