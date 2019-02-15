@@ -5,9 +5,6 @@ import '../views/todo/todo-view';
 import {
   BaseView
 } from '../components/base-view.js';
-import '@vaadin/vaadin-button';
-import '@polymer/iron-icon/iron-icon.js';
-import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '../components/apollo-menu.js';
 import {
   router

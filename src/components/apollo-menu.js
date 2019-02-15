@@ -10,6 +10,7 @@ import {
 } from '../index';
 import '@vaadin/vaadin-button';
 import '@polymer/iron-icon';
+import '@vaadin/vaadin-icons/vaadin-icons.js';
 
 class ApolloMenu extends BaseView {
   constructor() {
