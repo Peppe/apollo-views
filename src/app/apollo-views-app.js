@@ -14,7 +14,6 @@ import {
 } from '../index';
 
 class ApolloViewsApp extends BaseView {
-
   render() {
     return html `
       <style>

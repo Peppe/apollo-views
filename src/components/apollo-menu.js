@@ -16,14 +16,19 @@ class ApolloMenu extends BaseView {
     super();
     this.collapsed = false;
     window.addEventListener('vaadin-router-location-changed', (event) => {
-      menu.map(item => {
+      // De-select all menu items
+      menu.forEach((item) => {
         item.selected = false;
-        if (item.href === event.detail.location.getUrl()) {
-          item.selected = true;
-        }
       });
+      // Find the one element that should be selected
+      const selectMenu = menu.find((item) => {
+        return item.href === event.detail.location.getUrl();
+      });
+      // Select it and inform of an update to the template
+      selectMenu.selected = true;
       this.requestUpdate();
     });
+
     this.addEventListener('mouseenter', () => {
       if (this.collapsed) {
         this.setAttribute('hover', '');
@@ -31,6 +36,13 @@ class ApolloMenu extends BaseView {
     });
     this.addEventListener('mouseleave', () => {
       this.removeAttribute('hover');
+    });
+
+    this.addEventListener('touchend', () => {
+      if (this.collapsed) {
+        this.removeAttribute('collapsed');
+        this.collapsed = false;
+      }
     });
   }
 
@@ -101,17 +113,12 @@ class ApolloMenu extends BaseView {
         </vaadin-button>
         <div class="header">Views</div>
         ${menu.map(view => html`
-          <a href='${this.__getUrlForHome(view.href)}' ?selected='${view.selected}'>${view.caption}</a>
+          <a href='${router.urlForPath(view.href)}' ?selected='${view.selected}'>${view.caption}</a>
         `)}
       </div>
     `;
   }
 
-  __getUrlForHome(path) {
-    const url = router.urlForPath(path);
-    return url;
-  }
-  
   collapseButton() {
     if (!this.collapsed) {
       this.setAttribute('collapsed', '');
