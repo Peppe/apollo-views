@@ -100,7 +100,7 @@ class ApolloMenu extends BaseView {
           <iron-icon icon="vaadin:menu" slot="prefix"></iron-icon>
         </vaadin-button>
         <div class="header">Views</div>
-        ${this.views.map(view => html`
+        ${menu.map(view => html`
           <a href='${this.__getUrlForHome(view.href)}' ?selected='${view.selected}'>${view.caption}</a>
         `)}
       </div>
