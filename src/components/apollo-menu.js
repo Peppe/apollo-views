@@ -5,26 +5,20 @@ import {
   BaseView
 } from './base-view';
 import {
-  router
+  router,
+  menu
 } from '../index';
+import '@vaadin/vaadin-button';
+import '@polymer/iron-icon';
 
 class ApolloMenu extends BaseView {
-
-
   constructor() {
     super();
-    this.views = [
-      {href: '/', caption: 'Todos', selected: false},
-      {href: '/spreadsheet', caption: 'Spreadsheet', selected: false},
-      {href: '/order', caption: 'Order form', selected: false},
-      {href: '/foo', caption: 'Lost', selected: false},
-    ];
     this.collapsed = false;
     window.addEventListener('vaadin-router-location-changed', (event) => {
-      console.log(event);
-      this.views.map(item => {
+      menu.map(item => {
         item.selected = false;
-        if (item.href === event.detail.location.pathname) {
+        if (item.href === event.detail.location.getUrl()) {
           item.selected = true;
         }
       });
@@ -106,7 +100,9 @@ class ApolloMenu extends BaseView {
           <iron-icon icon="vaadin:menu" slot="prefix"></iron-icon>
         </vaadin-button>
         <div class="header">Views</div>
-        ${this.views.map(view => html` <a href='${this.__getUrlForHome(view.href)}' ?selected='${view.selected}'>${view.caption}</a>`)}
+        ${this.views.map(view => html`
+          <a href='${this.__getUrlForHome(view.href)}' ?selected='${view.selected}'>${view.caption}</a>
+        `)}
       </div>
     `;
   }

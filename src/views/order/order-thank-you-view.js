@@ -1,3 +1,4 @@
+
 import {
   html
 } from 'lit-element';
@@ -5,8 +6,7 @@ import {
   BaseView
 } from '../../components/base-view';
 
-// TODO Update this when copying
-class ComponentTemplate extends BaseView {
+class OrderThankYouView extends BaseView {
 
   constructor() {
     super();
@@ -15,7 +15,7 @@ class ComponentTemplate extends BaseView {
 
   render() {
     return html `
-      <div>Hello ${this.property}</div>
+      <div>Your order has now been placed. You will get a confirmation by e-mail. Thank you for ordering.</div>
     `;
   }
 
@@ -23,5 +23,4 @@ class ComponentTemplate extends BaseView {
   }
 }
 
-// TODO Update this when copying
-customElements.define('component-template', ComponentTemplate);
+customElements.define('order-thank-you-view', OrderThankYouView);

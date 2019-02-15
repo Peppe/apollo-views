@@ -38,7 +38,7 @@ class ApolloViewsApp extends BaseView {
         }
       </style>
       <div id="main-layout">
-        <apollo-menu views="${this.views}"></apollo-menu>
+        <apollo-menu></apollo-menu>
         <div id="router-output"></div>
       </div>
     `;

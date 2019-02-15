@@ -4,7 +4,7 @@ import {
 import {
   BaseView
 } from '../../components/base-view';
-import '@vaadin/vaadin-grid';
+import '@vaadin/vaadin-grid/vaadin-grid.js';
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-text-field/vaadin-number-field';
 import '@vaadin/vaadin-text-field/vaadin-email-field';
@@ -17,7 +17,7 @@ class OrderFormView extends BaseView {
     super();
     this.property = 'World';
     this.items = [
-      {name: 'HK Sininen', description: 'The legendary Finnish sausage, since 1963', price: 3.99, image: './img/hksininen.jpg', amount: 0},
+      {name: 'HK Sininen', description: 'The legendary Finnish sausage, since 1963', price: 3.99, image: '/img/hksininen.jpg', amount: 0},
       {name: 'Kanaa', description: 'A superior food product', price: 5.47, image: '/img/hksininen.jpg', amount: 0},
       {name: 'Nautaa', description: 'A superior food product', price: 3.00, image: '/img/hksininen.jpg', amount: 0},
       {name: 'Possuu', description: 'A superior food product', price: 2.00, image: '/img/hksininen.jpg', amount: 0},
@@ -67,7 +67,7 @@ class OrderFormView extends BaseView {
           ${this.item ?
     html`
       <h2>${this.item.name}</h2>
-      <img src='${this.item.image}'>
+      <img src='${this.getImageUrl(this.item.image)}'>
       <p>${this.item.description}</p>
     ` :
     html``}
@@ -81,14 +81,22 @@ class OrderFormView extends BaseView {
           <vaadin-grid-column id='summary-total' path='total' header='Total price' text-align="end"></vaadin-grid-column>
       </vaadin-grid>
       <h2>Order information</h2>
-      <vaadin-form-layout>
-        <vaadin-text-field label="Your name"></vaadin-text-field>
-        <vaadin-text-field label="Customer number"></vaadin-text-field>
-        <vaadin-email-field label="Email"></vaadin-email-field>
-      </vaadin-form-layout>
-      <vaadin-button @click=${() => this.openDialog()}>Send order</vaadin-button>
-      <vaadin-dialog id='dialog' no-close-on-outside-click></vaadin-dialog>
+      <form name='meat-order' action='/order-sent' method='POST' data-netlify='true'>
+        <vaadin-form-layout>
+          <vaadin-text-field label="Your name"></vaadin-text-field>
+          <vaadin-text-field label="Customer number"></vaadin-text-field>
+          <vaadin-email-field label="Email"></vaadin-email-field>
+        </vaadin-form-layout>
+        <button type="submit">Send</button>
+        <vaadin-button type="submit">Send</vaadin-button>
+        <vaadin-dialog id='dialog' no-close-on-outside-click></vaadin-dialog>
+      </form>
     `;
+  }
+
+  getImageUrl(image) {
+    const base = document.baseURI;
+    return base + image;
   }
   applyFilter(items) {
     return items.filter(item => item.amount > 0);
