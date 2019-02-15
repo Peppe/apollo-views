@@ -68,6 +68,20 @@ class SpreadsheetView extends BaseView {
 
   render() {
     return html `
+      <dom-module id="my-grid-styles" theme-for="vaadin-grid">
+        <template>
+          <style>
+            [part~="header-cell"] {
+              background-color: #f8f8f8 !important;
+              text-align: center;
+            }
+            .row[part~="cell"] {
+              background-color: #f8f8f8;
+              text-align: center;
+            }
+          </style>
+        </template>
+      </dom-module>
       <style>
         :host {
           height:100%;
@@ -78,19 +92,10 @@ class SpreadsheetView extends BaseView {
         #grid {
           flex: 1;
         }
-
-        #grid [part~='columnheader']{
-          background-color: #eee;
-        }
-
-        [part~="columnheader"] {
-          background: rgb(255, 240, 240);
-        }
-
       </style>
       <h1>Spreadsheet</h1>
       <vaadin-grid-pro id="grid" .items=${this.items} theme="compact column-borders">
-        <vaadin-grid-column path="row" header=""></vaadin-grid-column>
+        <vaadin-grid-column path="row" header="" width="3em"></vaadin-grid-column>
         <vaadin-grid-pro-edit-column path="a" header="A"></vaadin-grid-pro-edit-column>
         <vaadin-grid-pro-edit-column path="b" header="B"></vaadin-grid-pro-edit-column>
         <vaadin-grid-pro-edit-column path="c" header="C"></vaadin-grid-pro-edit-column>
@@ -121,6 +126,14 @@ class SpreadsheetView extends BaseView {
     `;
   }
 
+  firstUpdated() {
+    const grid = this.shadowRoot.getElementById('grid');
+    grid.cellClassNameGenerator = function(column, rowData) {
+      if (column.path === 'row') {
+        return 'row';
+      }
+    };
+  }
   collapseButton() {
   }
 }
