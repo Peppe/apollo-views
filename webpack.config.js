@@ -32,6 +32,9 @@ const assets = [
   {
     from: 'src/img',
     to: 'img/'
+  }, {
+    from: 'src/_redirects',
+    to: ''
   }
 ];
 
