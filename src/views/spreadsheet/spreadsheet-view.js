@@ -78,22 +78,44 @@ class SpreadsheetView extends BaseView {
         #grid {
           flex: 1;
         }
+
+        #grid [part~='columnheader']{
+          background-color: #eee;
+        }
+
+        [part~="columnheader"] {
+          background: rgb(255, 240, 240);
+        }
+
       </style>
       <h1>Spreadsheet</h1>
       <vaadin-grid-pro id="grid" .items=${this.items} theme="compact column-borders">
         <vaadin-grid-column path="row" header=""></vaadin-grid-column>
-        <vaadin-grid-pro-edit-column path="" header="A"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="B"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="C"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="D"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="E"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="F"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="G"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="H"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="I"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="J"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="K"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="" header="L"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="a" header="A"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="b" header="B"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="c" header="C"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="d" header="D"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="e" header="E"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="f" header="F"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="g" header="G"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="h" header="H"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="i" header="I"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="j" header="J"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="k" header="K"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="l" header="L"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="m" header="M"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="n" header="N"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="o" header="O"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="p" header="P"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="q" header="Q"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="r" header="R"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="s" header="S"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="t" header="T"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="u" header="U"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="v" header="V"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="w" header="X"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="y" header="Y"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="z" header="Z"></vaadin-grid-pro-edit-column>
         
       </vaadin-grid-pro>
     `;
