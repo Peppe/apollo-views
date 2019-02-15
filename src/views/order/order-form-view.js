@@ -17,13 +17,13 @@ class OrderFormView extends BaseView {
     super();
     this.property = 'World';
     this.items = [
-      {name: 'HK Sininen', description: 'The legendary Finnish sausage, since 1963', price: 3.99, image: '/img/hksininen.jpg', amount: 0},
-      {name: 'Kanaa', description: 'A superior food product', price: 5.47, image: '/img/hksininen.jpg', amount: 0},
-      {name: 'Nautaa', description: 'A superior food product', price: 3.00, image: '/img/hksininen.jpg', amount: 0},
-      {name: 'Possuu', description: 'A superior food product', price: 2.00, image: '/img/hksininen.jpg', amount: 0},
-      {name: 'Etanoita', description: 'A superior food product', price: 7.50, image: '/img/hksininen.jpg', amount: 0},
-      {name: 'Kukkakaalia', description: 'A superior food product', price: 2.40, image: '/img/hksininen.jpg', amount: 0},
-      {name: 'Kalaa', description: 'A superior food product', price: 8.90, image: '/img/hksininen.jpg', amount: 0}
+      {name: 'HK Sininen', description: 'The legendary Finnish sausage, since 1963', price: 3.99, image: '/img/order/hksininen.jpg', amount: 0},
+      {name: 'Chicken', description: 'A superior food product', price: 5.47, image: '/img/order/chicken.jpg', amount: 0},
+      {name: 'Beef', description: 'A superior food product', price: 3.00, image: '/img/order/beef.jpg', amount: 0},
+      {name: 'Ham', description: 'A superior food product', price: 2.00, image: '/img/order/ham.jpg', amount: 0},
+      {name: 'Fish', description: 'A superior food product', price: 8.90, image: '/img/order/fish.jpg', amount: 0},
+      {name: 'Snails', description: 'A superior food product', price: 7.50, image: '/img/order/snail.jpg', amount: 0},
+      {name: 'Broccoli', description: 'A superior food product', price: 2.40, image: '/img/order/broccoli.jpg', amount: 0}
     ];
     this.selectedItems = [];
     this.item = {};
@@ -64,13 +64,11 @@ class OrderFormView extends BaseView {
           <vaadin-grid-column id='amount-column' header=''></vaadin-grid-column>
         </vaadin-grid>
         <div id='product-details'>
-          ${this.item ?
-    html`
-      <h2>${this.item.name}</h2>
-      <img src='${this.getImageUrl(this.item.image)}'>
-      <p>${this.item.description}</p>
-    ` :
-    html``}
+          ${this.item ? html`
+            <h2>${this.item.name}</h2>
+            <img src='${document.baseURI + this.item.image}'>
+            <p>${this.item.description}</p>
+          ` : html``}
         </div>
       </div>
       <h2>Summary</h2>
@@ -88,16 +86,12 @@ class OrderFormView extends BaseView {
           <vaadin-email-field label="Email"></vaadin-email-field>
         </vaadin-form-layout>
         <button type="submit">Send</button>
-        <vaadin-button type="submit">Send</vaadin-button>
+        <vaadin-button type="submit" @click=${() => this.openDialog()}>Send</vaadin-button>
         <vaadin-dialog id='dialog' no-close-on-outside-click></vaadin-dialog>
       </form>
     `;
   }
 
-  getImageUrl(image) {
-    const base = document.baseURI;
-    return base + image;
-  }
   applyFilter(items) {
     return items.filter(item => item.amount > 0);
   }
@@ -105,7 +99,7 @@ class OrderFormView extends BaseView {
   openDialog() {
     console.log('dialog');
     const dialog = this.shadowRoot.getElementById('dialog');
-    dialog.setAttribute('opened', 'true');
+    dialog.opened = true;
   }
 
   getSummary(items) {
