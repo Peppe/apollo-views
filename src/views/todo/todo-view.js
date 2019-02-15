@@ -62,6 +62,7 @@ class TodoView extends BaseView {
           margin-top: calc(4 * var(--spacing));
         }
       </style>
+      <h1>Todos</h1>
       <div class="input-layout"
         @keyup="${this.shortcutListener}"> 
 
