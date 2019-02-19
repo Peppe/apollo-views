@@ -258,14 +258,14 @@ class SpreadsheetView extends BaseView {
       <vaadin-grid-pro id="grid" .items=${this.items} theme="compact column-borders">
         <vaadin-grid-column path="row" header="" width="3em"></vaadin-grid-column>
         <vaadin-grid-pro-edit-column path="a" header="A"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="b" header="B"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="c" header="C"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="d" header="D"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="e" header="E"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="f" header="F"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="g" header="G"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="h" header="H"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="i" header="I"></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="b" header="B" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="c" header="C" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="d" header="D" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="e" header="E" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="f" header="F" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="g" header="G" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="h" header="H" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="i" header="I" resizable></vaadin-grid-pro-edit-column>
         <vaadin-grid-pro-edit-column path="j" header="J"></vaadin-grid-pro-edit-column>
         <vaadin-grid-pro-edit-column path="k" header="K"></vaadin-grid-pro-edit-column>
         <vaadin-grid-pro-edit-column path="l" header="L"></vaadin-grid-pro-edit-column>
