@@ -255,7 +255,7 @@ class SpreadsheetView extends BaseView {
         <vaadin-text-field id="function-field" theme="small"></vaadin-text-field>
       </div>
       </div>
-      <vaadin-grid-pro id="grid" .items=${this.items} theme="compact column-borders">
+      <vaadin-grid-pro id="grid" .items=${this.items} theme="compact column-borders" keep-editor-open enter-next-row>
         <vaadin-grid-column path="row" header="" width="3em"></vaadin-grid-column>
         <vaadin-grid-pro-edit-column path="a" header="A"></vaadin-grid-pro-edit-column>
         <vaadin-grid-pro-edit-column path="b" header="B" resizable></vaadin-grid-pro-edit-column>
