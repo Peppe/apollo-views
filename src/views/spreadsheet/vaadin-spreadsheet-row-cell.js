@@ -67,19 +67,17 @@ class SpreadsheetRowCellElement extends LitElement {
     resizer.addEventListener('dragstart', (event) => {
       this.resizing = true;
       this.top = event.clientY;
-      this.height = cell.clientHeight;
     });
     resizer.addEventListener('drag', (event) => {
-      if(event.clientY !== 0) {
-
+      if (event.clientY !== 0) {
+        const newHeight = (event.clientY - this.top);
+        console.log('newHeight: ' + newHeight);
+        content.setAttribute('height', newHeight + 'px');
+        this.grid.notifyResize();
       }
-      const newHeight = (event.clientY - this.top);
-      console.log('newHeight: ' + newHeight);
-      content.setAttribute('height', '100px');
-      this.grid.notifyResize();
     });
     resizer.addEventListener('dragend', (event) => {
-      this.resizing=false;
+      this.resizing = false;
       console.log('end');
     });
   }

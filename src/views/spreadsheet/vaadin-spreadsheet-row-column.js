@@ -8,10 +8,6 @@ import {
   FlattenedNodesObserver
 } from '@polymer/polymer/lib/utils/flattened-nodes-observer.js';
 import {
-  get,
-  set
-} from '@polymer/polymer/lib/utils/path.js';
-import {
   GridColumnElement
 } from '@vaadin/vaadin-grid/src/vaadin-grid-column.js';
 import './vaadin-spreadsheet-row-cell';

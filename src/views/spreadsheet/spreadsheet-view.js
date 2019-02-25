@@ -276,34 +276,34 @@ class SpreadsheetView extends BaseView {
         <vaadin-text-field theme="borderless" id="function-field" theme="small" value=${this.currentContent}></vaadin-text-field>
       </div>
       </div>
-      <vaadin-grid-pro id="grid" .items=${this.items} theme="compact column-borders">
+
+      <vaadin-grid-pro id="grid" .items=${this.items} theme="compact column-borders" keep-editor-open enter-next-row>
         <vaadin-spreadsheet-row-column path="row" header="" width="3em"></vaadin-spreadsheet-row-column>
-        <vaadin-grid-pro-edit-column path="a" header="A"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="b" header="B"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="c" header="C"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="d" header="D"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="e" header="E"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="f" header="F"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="g" header="G"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="h" header="H"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="i" header="I"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="j" header="J"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="k" header="K"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="l" header="L"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="m" header="M"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="n" header="N"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="o" header="O"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="p" header="P"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="q" header="Q"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="r" header="R"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="s" header="S"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="t" header="T"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="u" header="U"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="v" header="V"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="w" header="X"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="y" header="Y"></vaadin-grid-pro-edit-column>
-        <vaadin-grid-pro-edit-column path="z" header="Z"></vaadin-grid-pro-edit-column>
-        
+        <vaadin-grid-pro-edit-column path="a" header="A" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="b" header="B" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="c" header="C" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="d" header="D" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="e" header="E" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="f" header="F" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="g" header="G" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="h" header="H" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="i" header="I" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="j" header="J" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="k" header="K" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="l" header="L" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="m" header="M" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="n" header="N" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="o" header="O" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="p" header="P" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="q" header="Q" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="r" header="R" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="s" header="S" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="t" header="T" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="u" header="U" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="v" header="V" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="w" header="X" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="y" header="Y" resizable></vaadin-grid-pro-edit-column>
+        <vaadin-grid-pro-edit-column path="z" header="Z" resizable></vaadin-grid-pro-edit-column>
       </vaadin-grid-pro>
     `;
   }
@@ -316,8 +316,6 @@ class SpreadsheetView extends BaseView {
       }
     };
     grid.addEventListener('cell-focus-changed', (event) => {
-      console.log(event.detail.cell);
-      console.log(event.detail.cell._content.innerText);
       this.currentContent = event.detail.cell._content.innerText;
     });
   }
