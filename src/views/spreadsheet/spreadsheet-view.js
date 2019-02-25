@@ -11,11 +11,21 @@ import '@polymer/iron-icon';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-select';
+import './vaadin-spreadsheet-row-column';
 
 class SpreadsheetView extends BaseView {
 
+  static get properties() {
+    return {
+      currentContent: {
+        type: String
+      }
+    };
+  }
+
   constructor() {
     super();
+    this.currentContent = '';
     this.items = [
       {row: '1'},
       {row: '2'},
@@ -82,6 +92,12 @@ class SpreadsheetView extends BaseView {
             .row[part~="cell"] {
               background-color: #f8f8f8;
               text-align: center;
+              padding:0;
+            }
+
+            .row[part~="cell"] vaadin-grid-cell-content {
+              padding:0;
+              
             }
           </style>
         </template>
@@ -90,14 +106,19 @@ class SpreadsheetView extends BaseView {
       <dom-module id="my-text-field-styles" theme-for="vaadin-text-field">
         <template>
           <style>
-            :host(#function-field) [part="input-field"] {
- 
+            :host(vaadin-text-field):not([has-value]):not([focused]):not([invalid]) [part=“label”] {
+              transform: scale(0.75);
+            }
+          </style>
+        </template>
+      </dom-module>
+
+      <dom-module id="my-text-field-styles" theme-for="vaadin-text-field vaadin-select-text-field">
+        <template>
+          <style>
+            :host([theme~="borderless"]) [part="input-field"] {
               background-color: #fff;
             }
-            :host(#function-field) [part="input-field"] {
- 
- background-color: #fff;
-}
           </style>
         </template>
       </dom-module>
@@ -233,7 +254,7 @@ class SpreadsheetView extends BaseView {
           </vaadin-button>
         </div>
         <div class='tool-bar-button-group'>
-          <vaadin-select id="tool-bar-zoom" value='1.0'>
+          <vaadin-select id="tool-bar-zoom" theme="borderless" value='1.0'>
             <template>
               <vaadin-list-box>
                 <vaadin-item value='0.5'>50%</vaadin-item>
@@ -252,11 +273,11 @@ class SpreadsheetView extends BaseView {
           <iron-icon id="function-icon" icon="vaadin:funcion" size="24"></iron-icon>
         </span>
         
-        <vaadin-text-field id="function-field" theme="small"></vaadin-text-field>
+        <vaadin-text-field theme="borderless" id="function-field" theme="small" value=${this.currentContent}></vaadin-text-field>
       </div>
       </div>
       <vaadin-grid-pro id="grid" .items=${this.items} theme="compact column-borders">
-        <vaadin-grid-column path="row" header="" width="3em"></vaadin-grid-column>
+        <vaadin-spreadsheet-row-column path="row" header="" width="3em"></vaadin-spreadsheet-row-column>
         <vaadin-grid-pro-edit-column path="a" header="A"></vaadin-grid-pro-edit-column>
         <vaadin-grid-pro-edit-column path="b" header="B"></vaadin-grid-pro-edit-column>
         <vaadin-grid-pro-edit-column path="c" header="C"></vaadin-grid-pro-edit-column>
@@ -294,6 +315,11 @@ class SpreadsheetView extends BaseView {
         return 'row';
       }
     };
+    grid.addEventListener('cell-focus-changed', (event) => {
+      console.log(event.detail.cell);
+      console.log(event.detail.cell._content.innerText);
+      this.currentContent = event.detail.cell._content.innerText;
+    });
   }
   collapseButton() {
   }
