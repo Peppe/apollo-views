@@ -13,14 +13,20 @@ class ContentView extends BaseView {
   constructor() {
     super();
     this.items = [
-      {name: 'Home', id: 'home', created: '2018-05-20 18:52', modified: '2018-05-20 19:03', content: '[{\"attributes\":{\"bold\":true},\"insert\":\"Gandalf\"}]'},
-      {name: 'Product', id: 'product', created: '2018-03-15 12:48', modified: '2018-03-15 12:48', content: '[{\"attributes\":{\"bold\":true},\"insert\":\"Gandalf\"}]'},
+      {name: 'Home', id: 'home', created: '2018-05-20 18:52', modified: '2018-05-20 19:03',
+        content: '[{\"insert\":\"LogiTech SonarPlugs 3000\"},{\"attributes\":{\"align\":\"center\",\"header\":1},\"insert\":\"\\n\"},{\"insert\":\"Let your vibes resonate in your bones\"},{\"attributes\":{\"align\":\"center\",\"header\":2},\"insert\":\"\\n\"},{\"insert\":\"The new SonarPlugs 3000 from LogiTech is unlike anything you have experienced so far. Experience music in a new level of immersion never heard before. Experience the crystal clear sound not reproducible with other technology.\\nBuy now at selected resellers for $58.90!\\n\"}]',
+        html: '<h1 style="text-align: center">LogiTech SonarPlugs 3000</h1><h2 style="text-align: center">Let your vibes resonate in your bones</h2><p>The new SonarPlugs 3000 from LogiTech is unlike anything you have experienced so far. Experience music in a new level of immersion never heard before. Experience the crystal clear sound not reproducible with other technology.</p><p>Buy now at selected resellers for $58.90!</p>'
+      },
+      {name: 'Product', id: 'product', created: '2018-03-15 12:48', modified: '2018-03-15 12:48', 
+        content: "[{\"attributes\":{\"bold\":true},\"insert\":\"Gandalf the gray foo bar\"},{\"insert\":\"\\n\"}]",
+        html: ''},
       {name: 'Who are we?', id: 'company', created: '2018-08-12 22:14', modified: '2018-08-13 09:42', content: '[{\"attributes\":{\"bold\":true},\"insert\":\"Gandalf\"}]'},
       {name: 'Mission', id: 'mission', created: '2018-12-05 04:20', modified: '2019-01-02 10:20', content: '[{\"attributes\":{\"bold\":true},\"insert\":\"Gandalf\"}]'},
       {name: 'Contact us', id: 'contact', created: '2019-02-08 19:01', modified: '2019-02-08 19:01', content: '[{\"attributes\":{\"bold\":true},\"insert\":\"Gandalf\"}]'},
     ];
-    this.item = [];
+    this.item = null;
     this.selectedItems = [];
+    this.htmlValue = null;
   }
 
   render() {
@@ -99,14 +105,14 @@ class ContentView extends BaseView {
       </vaadin-grid>
       <div id='form' hidden>
         <div id='fields'>
-          <vaadin-text-field id='name' label='Content name' value='${this.item.name}'></vaadin-text-field>
-          <vaadin-text-field id='id' label='Identifier' value='${this.item.id}'></vaadin-text-field>
-          <vaadin-text-field id='created' label='Created on' readonly value='${this.item.created}'></vaadin-text-field>
-          <vaadin-text-field id='modified' label='Modified on' readonly value='${this.item.modified}'></vaadin-text-field>
+          <vaadin-text-field id='name' label='Content name' value='${this.item ? this.item.name : null}'></vaadin-text-field>
+          <vaadin-text-field id='id' label='Identifier' value='${this.item ? this.item.id : null}'></vaadin-text-field>
+          <vaadin-text-field id='created' label='Created on' readonly value='${this.item ? this.item.created : null}'></vaadin-text-field>
+          <vaadin-text-field id='modified' label='Modified on' readonly value='${this.item ? this.item.modified : null}'></vaadin-text-field>
         </div>
         <div id='view'>
-          <vaadin-rich-text-editor id='editor' value='${this.item.content}'></vaadin-rich-text-editor>
-          <div id='preview'>${this.item.content}</div>
+          <vaadin-rich-text-editor id='editor' value='${this.item ? this.item.content : ''}' @value-changed='${this.editorUpdated}'></vaadin-rich-text-editor>
+          <div id='preview'></div>
         </div>
         <div id='buttons'>
           <vaadin-button id='discard' @click=${this.discard}>Discard</vaadin-button>
@@ -116,13 +122,18 @@ class ContentView extends BaseView {
     `;
   }
 
+  editorUpdated(event) {
+    this.htmlValue = this.shadowRoot.getElementById('editor').htmlValue;
+    this.shadowRoot.getElementById('preview').innerHTML = this.htmlValue;
+  }
+
   activeItem(event) {
     const item = event.detail.value;
     this.updateEditorStatus(item);
   }
 
   updateEditorStatus(item) {
-    this.item = item ? item : {};
+    this.item = item;
     this.shadowRoot.getElementById('list').selectedItems = item ? [this.item] : [];
     this.requestUpdate();
     if (item) {
@@ -140,6 +151,11 @@ class ContentView extends BaseView {
   }
 
   save() {
+    const editor = this.shadowRoot.getElementById('editor');
+    const value = JSON.stringify(editor.value);
+    const html = editor.htmlValue;
+    console.log(value);
+    console.log(html);
     this.updateEditorStatus(null);
   }
 }

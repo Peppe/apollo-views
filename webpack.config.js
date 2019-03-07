@@ -80,6 +80,12 @@ module.exports = ({ mode, presets }) => {
                 ]
               ]
             }
+          }, {
+            test: require.resolve('@vaadin/vaadin-rich-text-editor/vendor/vaadin-quill.js'),
+            use: [{
+              loader: 'expose-loader',
+              options: 'Quill'
+            }]
           }
         ]
       },
