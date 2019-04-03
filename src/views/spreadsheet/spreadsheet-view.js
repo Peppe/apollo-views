@@ -129,8 +129,7 @@ class SpreadsheetView extends BaseView {
           {text: 'Spreadsheet settings...'},
           {text: 'Print'},
         ]
-      },
-      {
+      }, {
         text: 'Edit',
         children: [
           {text: 'Undo'},
@@ -158,11 +157,91 @@ class SpreadsheetView extends BaseView {
           {text: 'Clear notes'},
           {text: 'Remove checkboxes'},
         ]
+      }, {
+        text: 'View',
+        children: [
+          {text: 'Freeze',
+            children: [
+              {text: 'No _r_ows'},
+              {text: '1 r_o_w'},
+              {text: '2 ro_w_s'},
+              {text: '_U_p to current row (1)'},
+              {component: 'hr'},
+              {text: 'No _c_olumns'},
+              {text: '1 co_l_umn'},
+              {text: '2 colu_m_ns'},
+              {text: 'U_p_ to current column (A)'},
+            ]
+          },
+          {component: 'hr'},
+          {text: 'Gridlines'},
+          {text: 'Protected ranges'},
+          {component: 'hr'},
+          {text: 'Forumla bar'},
+          {text: 'Show formulas'},
+          {component: 'hr'},
+          {text: 'Hidden sheets',
+            children: [
+              {text: 'sheet1'},
+            ]
+          },
+          {text: 'Zoom',
+            children: [
+              {text: '50%'},
+              {text: '75%'},
+              {text: '90%'},
+              {text: '100%'},
+              {text: '125%'},
+              {text: '150%'},
+              {text: '200%'},
+            ]
+          },
+        ]
+      }, {
+        text: 'Format',
+        children: [
+          {text: 'single'},
+          {component: 'hr'},
+          {text: 'sub menu',
+            children: [
+              {text: 'single'},
+            ]
+          },
+        ]
+      }, {
+        text: 'Format',
+        children: [
+          {text: 'single'},
+          {component: 'hr'},
+          {text: 'sub menu',
+            children: [
+              {text: 'single'},
+            ]
+          },
+        ]
+      }, {
+        text: 'Data',
+        children: [
+          {text: 'single'},
+          {component: 'hr'},
+          {text: 'sub menu',
+            children: [
+              {text: 'single'},
+            ]
+          },
+        ]
+      }, {
+        text: 'Help',
+        children: [
+          {text: 'single'},
+          {component: 'hr'},
+          {text: 'sub menu',
+            children: [
+              {text: 'single'},
+            ]
+          },
+        ]
       },
-      {text: 'View'},
-      {text: 'Format'},
-      {text: 'Data'},
-      {text: 'Help'},
     ];
   }
 
