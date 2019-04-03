@@ -11,6 +11,7 @@ import '@polymer/iron-icon';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-select';
+import '@vaadin/vaadin-menu-bar';
 import './vaadin-spreadsheet-row-column';
 
 class SpreadsheetView extends BaseView {
@@ -77,6 +78,34 @@ class SpreadsheetView extends BaseView {
       {row: '48'},
       {row: '49'},
       {row: '50'}
+    ];
+    this.menuitems = [
+      {
+        text: 'File',
+        children: [
+          {text: 'Dashboard'},
+          {component: 'hr'},
+          {text: 'Users',
+            children: [{text: 'List'}, {text: 'Add'}]
+          }, {
+            text: 'Billing',
+            children: [{text: 'Invoices'}, {text: 'Balance Events'}]
+          },
+        ]
+      },
+      {
+        text: 'Edit',
+        children: [
+          {text: 'Edit Profile'},
+          {component: 'hr'},
+          {text: 'Privacy Settings'},
+          {text: 'Terms of Service'}
+        ]
+      },
+      {text: 'View'},
+      {text: 'Format'},
+      {text: 'Data'},
+      {text: 'Help'},
     ];
   }
 
@@ -228,6 +257,7 @@ class SpreadsheetView extends BaseView {
         <iron-icon id="icon" icon="vaadin:table" size="64"></iron-icon>
         <div id="name-and-menu">
           <h1>Spreadsheet</h1>
+          <vaadin-menu-bar id='menu-bar2'></vaadin-menu-bar>
           <div id='menu-bar'>
             <vaadin-button theme="contrast tertiary-inline">File</vaadin-button>
             <vaadin-button theme="contrast tertiary-inline">Edit</vaadin-button>
