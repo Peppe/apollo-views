@@ -83,23 +83,80 @@ class SpreadsheetView extends BaseView {
       {
         text: 'File',
         children: [
-          {text: 'Dashboard'},
+          {text: 'File'},
+          {text: 'Share...'},
           {component: 'hr'},
-          {text: 'Users',
-            children: [{text: 'List'}, {text: 'Add'}]
-          }, {
-            text: 'Billing',
-            children: [{text: 'Invoices'}, {text: 'Balance Events'}]
+          {text: 'New',
+            children: [
+              {text: 'Document'},
+              {text: 'Spreadsheet'},
+              {text: 'Presentation'},
+              {text: 'Form'},
+              {text: 'Drawing'},
+              {text: 'From template...'},
+            ]
           },
+          {text: 'Open...'},
+          {text: 'Import...'},
+          {text: 'Make a copy...'},
+          {component: 'hr'},
+          {text: 'Download as',
+            children: [
+              {text: 'Microsoft Excel (.xlsx)'},
+              {text: 'OpenDocument format (.ods)'},
+              {text: 'PDF document (.pdf)'},
+              {text: 'Web Page (.html, zipped)'},
+              {text: 'Comma-separated values (.csv, current sheet)'},
+              {text: 'Tab-separated values (.tsv, current sheet)'},
+            ]
+          },
+          {text: 'Email as attachment...'},
+          {text: 'Version history',
+            children: [
+              {text: 'Name current version'},
+              {text: 'See version history'},
+            ]
+          },
+          {component: 'hr'},
+          {text: 'Rename'},
+          {text: 'Add to My Drive'},
+          {text: 'Move to trash'},
+          {component: 'hr'},
+          {text: 'Publish to the web...'},
+          {text: 'Email collaborators...'},
+          {component: 'hr'},
+          {text: 'Document details...'},
+          {text: 'Spreadsheet settings...'},
+          {text: 'Print'},
         ]
       },
       {
         text: 'Edit',
         children: [
-          {text: 'Edit Profile'},
+          {text: 'Undo'},
+          {text: 'Redo'},
           {component: 'hr'},
-          {text: 'Privacy Settings'},
-          {text: 'Terms of Service'}
+          {text: 'Cut'},
+          {text: 'Copy'},
+          {text: 'Paste'},
+          {text: 'Paste special',
+            children: [
+              {text: 'Paste *_v_alues* only'},
+              {text: 'Pas_t_e *format* only'},
+              {text: 'Paste all *except _b_orders*'},
+              {text: 'Paste *column width* only'},
+            ]
+          },
+          {component: 'hr'},
+          {text: 'Find and replace...'},
+          {text: 'Delete values'},
+          {text: 'Delete *row 11*'},
+          {text: 'Delete *column AD*'},
+          {text: 'Delete cells and shift *up*'},
+          {text: 'Delete cells and shift *left*'},
+          {component: 'hr'},
+          {text: 'Clear notes'},
+          {text: 'Remove checkboxes'},
         ]
       },
       {text: 'View'},
@@ -257,15 +314,15 @@ class SpreadsheetView extends BaseView {
         <iron-icon id="icon" icon="vaadin:table" size="64"></iron-icon>
         <div id="name-and-menu">
           <h1>Spreadsheet</h1>
-          <vaadin-menu-bar id='menu-bar2'></vaadin-menu-bar>
-          <div id='menu-bar'>
+          <vaadin-menu-bar id='menu-bar2' .items=${this.menuitems} theme="contrast tertiary"></vaadin-menu-bar>
+<!--          <div id='menu-bar'>
             <vaadin-button theme="contrast tertiary-inline">File</vaadin-button>
             <vaadin-button theme="contrast tertiary-inline">Edit</vaadin-button>
             <vaadin-button theme="contrast tertiary-inline">View</vaadin-button>
             <vaadin-button theme="contrast tertiary-inline">Format</vaadin-button>
             <vaadin-button theme="contrast tertiary-inline">Data</vaadin-button>
             <vaadin-button theme="contrast tertiary-inline">Help</vaadin-button>
-          </div>
+          </div>-->
         </div>
       </div>
       <div id='tool-bar'>
