@@ -174,10 +174,10 @@ class SpreadsheetView extends BaseView {
             ]
           },
           {component: 'hr'},
-          {text: 'Gridlines'},
+          {text: 'Gridlines', checkable: true, checked: true},
           {text: 'Protected ranges'},
           {component: 'hr'},
-          {text: 'Forumla bar'},
+          {text: 'Forumla bar', checkable: true, checked: true},
           {text: 'Show formulas'},
           {component: 'hr'},
           {text: 'Hidden sheets',
