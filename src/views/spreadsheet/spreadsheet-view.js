@@ -275,7 +275,7 @@ class SpreadsheetView extends BaseView {
           {text: 'Font size'},
           {component: 'hr'},
           {text: 'Align'},
-          {text: 'Merge cells', disable: true},
+          {text: 'Merge cells', disabled: true},
           {text: 'Text wrapping'},
           {text: 'Text rotation'},
           {component: 'hr'},
