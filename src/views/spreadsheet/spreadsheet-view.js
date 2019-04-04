@@ -196,31 +196,118 @@ class SpreadsheetView extends BaseView {
               {text: '200%'},
             ]
           },
+          {component: 'hr'},
+          {text: 'Full screen'},
+        ]
+      }, {
+        text: 'Insert',
+        children: [
+          {text: 'row *above*'},
+          {text: 'row *below*'},
+          {component: 'hr'},
+          {text: 'column *left*'},
+          {text: 'column *right*'},
+          {component: 'hr'},
+          {text: 'Cells and shift *down*'},
+          {text: 'Cells and shift *right*'},
+          {component: 'hr'},
+          {text: 'Chart'},
+          {text: 'Image',
+            children: [
+              {text: 'Image in cell'},
+              {text: 'Image over cells'}
+            ]
+          },
+          {text: 'Drawing'},
+          {text: 'Form'},
+          {component: 'hr'},
+          {text: 'Function',
+            children: [
+              {text: 'I ain\'t typing all of these'},
+            ]
+          },
+          {text: 'Link'},
+          {text: 'Checkbox'},
+          {text: 'Comment'},
+          {text: 'Note'},
+          {component: 'hr'},
+          {text: 'New sheet'},
         ]
       }, {
         text: 'Format',
         children: [
-          {text: 'single'},
-          {component: 'hr'},
-          {text: 'sub menu',
+          {text: 'Number',
             children: [
-              {text: 'single'},
+              {text: 'Auto_ma_tic'},
+              {text: 'Plain te_x_t'},
+              {component: 'hr'},
+              {text: '_N_umber'},
+              {text: '_P_ercent'},
+              {text: '_S_cientific'},
+              {component: 'hr'},
+              {text: '_A_ccounting'},
+              {text: '_F_inancial'},
+              {text: '_C_urrency'},
+              {text: 'Cu_r_rency (rounded)'},
+              {component: 'hr'},
+              {text: '_D_ate'},
+              {text: '_T_ime'},
+              {text: 'Date t_i_me'},
+              {text: 'Du_r_ation'},
+              {component: 'hr'},
+              {text: '2008-04'},
+              {text: '04-23'},
+              {text: '20080423'},
+              {text: 'More formats',
+                children: [
+                  {text: 'More currencies...'},
+                  {text: 'More date and time formats...'},
+                  {text: 'Custom number formats...'}
+                ]
+              }          
             ]
           },
-        ]
-      }, {
-        text: 'Format',
-        children: [
-          {text: 'single'},
+          {text: 'Bold'},
+          {text: 'Italic'},
+          {text: 'Underline'},
+          {text: 'Strikethrough'},
           {component: 'hr'},
-          {text: 'sub menu',
-            children: [
-              {text: 'single'},
-            ]
-          },
+          {text: 'Font size'},
+          {component: 'hr'},
+          {text: 'Align'},
+          {text: 'Merge cells', disable: true},
+          {text: 'Text wrapping'},
+          {text: 'Text rotation'},
+          {component: 'hr'},
+          {text: 'Conditional formatting...'},
+          {text: 'Alternating colors...'},
+          {component: 'hr'},
+          {text: 'Clear formatting'},
         ]
       }, {
         text: 'Data',
+        children: [
+          {text: 'single'},
+          {component: 'hr'},
+          {text: 'sub menu',
+            children: [
+              {text: 'single'},
+            ]
+          },
+        ]
+      }, {
+        text: 'Tools',
+        children: [
+          {text: 'single'},
+          {component: 'hr'},
+          {text: 'sub menu',
+            children: [
+              {text: 'single'},
+            ]
+          },
+        ]
+      }, {
+        text: 'Add-ons',
         children: [
           {text: 'single'},
           {component: 'hr'},
