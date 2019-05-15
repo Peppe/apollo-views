@@ -110,8 +110,6 @@ class ApolloMenu extends BaseView {
         }
       </style>
       <div id="menu-wrapper">
-        <vaadin-drawer-toggle></vaadin-drawer-toggle>
-
         <div class="header">Views</div>
         ${menu.map(view => html`
           <a href='${router.urlForPath(view.href)}' ?selected='${view.selected}'>${view.caption}</a>

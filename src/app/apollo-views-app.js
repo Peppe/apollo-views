@@ -29,14 +29,22 @@ class ApolloViewsApp extends BaseView {
         }
 
         #router-output {
-          flex: 1;
+          height:100%;
           padding: var(--spacing);
           overflow: auto;
         }
+        #navbar {
+          padding:0 4px;
+        }
+
+        #header {
+          font-weight: bold
+        }
       </style>
-      <vaadin-app-layout>
-        <div slot="navbar">
+      <vaadin-app-layout primary-section="drawer">
+        <div id="navbar" slot="navbar">
           <vaadin-drawer-toggle></vaadin-drawer-toggle>
+          <span id="header">Apollo Views</span>
         </div>
         <apollo-menu slot="drawer"></apollo-menu>
         <div id="router-output"></div>

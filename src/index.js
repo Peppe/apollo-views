@@ -32,3 +32,8 @@ export const menu = [
   {href: '/content', caption: 'Content management', selected: false},
   {href: '/foo', caption: 'Lost', selected: false},
 ];
+
+window.addEventListener('vaadin-router-location-changed', event => {
+  var event = new Event('close-overlay-drawer');
+  window.dispatchEvent(event);
+});
