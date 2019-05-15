@@ -264,7 +264,7 @@ class SpreadsheetView extends BaseView {
                   {text: 'More date and time formats...'},
                   {text: 'Custom number formats...'}
                 ]
-              }          
+              }
             ]
           },
           {text: 'Bold'},

@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const { resolve } = require('path');
+const {resolve} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpackMerge = require('webpack-merge');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -55,7 +55,7 @@ const plugins = [
   })
 ];
 
-module.exports = ({ mode, presets }) => {
+module.exports = ({mode, presets}) => {
   return webpackMerge(
     {
       mode,
@@ -91,7 +91,7 @@ module.exports = ({ mode, presets }) => {
       },
       plugins
     },
-    modeConfig({ mode, presets }),
-    loadPresets({ mode, presets })
+    modeConfig({mode, presets}),
+    loadPresets({mode, presets})
   );
 };
