@@ -9,6 +9,7 @@ import '../components/apollo-menu.js';
 import {
   router
 } from '../index';
+import '@vaadin/vaadin-app-layout';
 
 class ApolloViewsApp extends BaseView {
   render() {
@@ -33,10 +34,14 @@ class ApolloViewsApp extends BaseView {
           overflow: auto;
         }
       </style>
-      <div id="main-layout">
-        <apollo-menu></apollo-menu>
+      <vaadin-app-layout>
+        <div slot="navbar">
+          <vaadin-drawer-toggle></vaadin-drawer-toggle>
+        </div>
+        <apollo-menu slot="drawer"></apollo-menu>
         <div id="router-output"></div>
-      </div>
+      </vaadin-app-layout>
+      <!--<div id="main-layout"></div>-->
     `;
   }
 

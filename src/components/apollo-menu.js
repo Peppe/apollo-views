@@ -11,6 +11,7 @@ import {
 import '@vaadin/vaadin-button';
 import '@polymer/iron-icon';
 import '@vaadin/vaadin-icons/vaadin-icons.js';
+import '@vaadin/vaadin-app-layout/vaadin-drawer-toggle.js';
 
 class ApolloMenu extends BaseView {
   constructor() {
@@ -109,25 +110,14 @@ class ApolloMenu extends BaseView {
         }
       </style>
       <div id="menu-wrapper">
-        <vaadin-button id="collapse-menu" theme="icon" aria-label="Hide or show menu" @click=${this.collapseButton}>
-          <iron-icon icon="vaadin:menu" slot="prefix"></iron-icon>
-        </vaadin-button>
+        <vaadin-drawer-toggle></vaadin-drawer-toggle>
+
         <div class="header">Views</div>
         ${menu.map(view => html`
           <a href='${router.urlForPath(view.href)}' ?selected='${view.selected}'>${view.caption}</a>
         `)}
       </div>
     `;
-  }
-
-  collapseButton() {
-    if (!this.collapsed) {
-      this.setAttribute('collapsed', '');
-      this.collapsed = true;
-    } else {
-      this.removeAttribute('collapsed');
-      this.collapsed = false;
-    }
   }
 }
 
