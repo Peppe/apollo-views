@@ -410,6 +410,7 @@ class SpreadsheetView extends BaseView {
 
         #header #name-and-menu {
           flex: 1;
+          width: 100%;
         }
 
         #header h1 {
