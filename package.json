@@ -34,7 +34,7 @@
     "eslint-config-vaadin": "^0.2.7",
     "expose-loader": "^0.7.5",
     "gh-pages": "^2.0.1",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^0.4.5",
     "style-loader": "^0.21.0",
     "webpack": "^4.29.3",
